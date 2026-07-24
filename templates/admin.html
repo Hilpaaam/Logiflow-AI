@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>LogiFlow AI – Admin</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 20px; background: #e3f2ff; color:#102040;}
+    h1 { margin-bottom: 10px; }
+    table { border-collapse: collapse; width: 100%; background: #fff;}
+    th, td { border: 1px solid #d5e2ff; padding: 6px 8px; font-size: 0.85rem;}
+    th { background: #b7d6ff; }
+  </style>
+</head>
+<body>
+  <h1>LogiFlow AI – Audit Leads</h1>
+  <p>Logged in as: {{ user }}</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Role</th><th>Company</th><th>City</th>
+        <th>Email</th><th>Phone</th><th>Employees</th><th>Fleet</th>
+        <th>Pain</th><th>90‑day goal</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for lead in leads %}
+      <tr>
+        <td>{{ lead.name }}</td>
+        <td>{{ lead.role }}</td>
+        <td>{{ lead.company }}</td>
+        <td>{{ lead.city }}</td>
+        <td>{{ lead.email }}</td>
+        <td>{{ lead.phone }}</td>
+        <td>{{ lead.employees }}</td>
+        <td>{{ lead.fleet }}</td>
+        <td>{{ lead.biggest_pain }}</td>
+        <td>{{ lead.goal }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
